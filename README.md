@@ -2,7 +2,8 @@
 PROJECT REQUIREMENTS 
 
  
-Grading (100 points): 
+Grading (100 points):
+
 20 points: Load data and preprocess it. 
  
 20 points: Train and test at least two models successfully. 
@@ -25,5 +26,3 @@ Project Topic:
 Uber & Lyft Cab prices 
 
 https://www.kaggle.com/datasets/ravi72munde/uber-lyft-cab-prices/data 
-
-Link to Project Report: CSCE878 - Project Report.docx 
