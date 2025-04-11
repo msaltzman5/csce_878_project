@@ -1,0 +1,21 @@
+Setting up GitHub:
+
+1. Open visual studio
+2. Create new terminal
+3. Find a directory.
+4. Download git.
+5. In new directory, run git clone https://github.com/msaltzman5/csce_878_project.git
+	
+Installing libraries
+1. install python
+2. pip install numpy
+3. pip install pandas
+4. pip install matplotlib
+5. pip install sklearn
+
+Committing to GitHub
+1. Make changes.
+2. To add to GitHub:
+	a. git add .
+	b. git commit -m "commit message"
+	c. git push

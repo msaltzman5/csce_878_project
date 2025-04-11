@@ -10,7 +10,7 @@ def main():
 
   all_rides = pd.read_csv('data/cab_rides.csv')
 
-  all_rides = all_rides[['distance', 'price']].dropna()
+  all_rides = all_rides[['distance', 'price', 'cab_type', '']].dropna()
 
 
   # filtered_rides = all_rides[['price', 'beds', 'baths', 'sqft']].dropna()
@@ -23,7 +23,7 @@ def main():
   scaler = StandardScaler()
   X_scaled = scaler.fit_transform(X)
 
-  eNet = ElasticNet(alpha=1, l1_ratio=.5)
+  eNet = ElasticNet(alpha=.1, l1_ratio=.5)
   eNet.fit(X_scaled,y)
 
   yPredictedENet = eNet.predict(X_scaled)
