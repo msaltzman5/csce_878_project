@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
-from sklearn.linear_model import ElasticNet
+from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error
 
 # Load the dataset
@@ -26,11 +26,11 @@ y = df_encoded["price"]
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
 # Train the model
-eNetModel = ElasticNet(alpha=0.1, l1_ratio=0.999)
-eNetModel.fit(X_train, y_train)
+rfModel = RandomForestRegressor(n_estimators=100, random_state=42)
+rfModel.fit(X_train, y_train)
 
 # Predict and evaluate
-y_pred = eNetModel.predict(X_test)
+y_pred = rfModel.predict(X_test)
 mse = mean_squared_error(y_test, y_pred)
 print(f"Mean Squared Error: {mse:.2f}")
 
@@ -38,12 +38,12 @@ results = X_test.copy()
 results["actual_price"] = y_test
 results["predicted_price"] = y_pred
 
-print(eNetModel.score(X, np.ravel(y)))
+print(rfModel.score(X, np.ravel(y)))
 
 # Display a few sample outputs
 print(results[["actual_price", "predicted_price"]])
 
 # Optional: Predict a sample
 sample = X.iloc[0:1]
-predicted_price = eNetModel.predict(sample)
+predicted_price = rfModel.predict(sample)
 print(f"Predicted price for sample 0: ${predicted_price[0]:.2f}")
