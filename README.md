@@ -26,3 +26,7 @@ Project Topic:
 Uber & Lyft Cab prices 
 
 https://www.kaggle.com/datasets/ravi72munde/uber-lyft-cab-prices/data 
+
+## To run this project, clone it and run these commands in the command line:
+1. python len_reg_model.py
+2. python rand_forest_model.py
